@@ -56,7 +56,7 @@ class FLAGS(Namespace):
 
     # ckpt
     ckpt_dir = Path("assets/infore/nat")
-    data_dir = Path("/kaggle/input/infore/InfoRe")
+    data_dir = Path("/kaggle/working/tts_clone/data_train")
 
 
 class DurationInput(NamedTuple):
