@@ -102,6 +102,7 @@ def load_textgrid_wav(
     for fn in tg_files:
         ps, ds = zip(*load_textgrid(fn))
         ps = [phonemes.index(p) for p in ps]
+        print(ps)
         l = len(ps)
         ps = pad_seq(ps, token_seq_len, 0)
         ds = pad_seq(ds, token_seq_len, 0)
