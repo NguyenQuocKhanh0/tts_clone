@@ -50,7 +50,7 @@ def load_textgrid(fn: Path):
 def textgrid_data_loader(data_dir: Path, seq_len: int, batch_size: int, mode: str):
     """load all textgrid files in the directory"""
     tg_files = sorted(data_dir.glob("*.TextGrid"))
-    print(tg_files)
+    # print(tg_files)
     random.Random(42).shuffle(tg_files)
     L = len(tg_files) * 95 // 100
     assert mode in ["train", "val"]
@@ -87,14 +87,14 @@ def load_textgrid_wav(
     data_dir: Path, token_seq_len: int, batch_size, pad_wav_len, mode: str
 ):
     """load wav and textgrid files to memory."""
-    print("data_dir:", data_dir)
+    # print("data_dir:", data_dir)
     tg_files = sorted(data_dir.glob("*.TextGrid"))
     # print(tg_files)
     random.Random(42).shuffle(tg_files)
     L = len(tg_files) * 95 // 100
     assert mode in ["train", "val", "gta"]
     phonemes = load_phonemes_set()
-    print(phonemes)
+    # print(phonemes)
     if mode == "gta":
         tg_files = tg_files  # all files
     elif mode == "train":
@@ -104,11 +104,11 @@ def load_textgrid_wav(
 
     data = []
     for fn in tg_files:
-        print(fn)
+        # print(fn)
         ps, ds = zip(*load_textgrid(fn))
-        print("ps",ps)
+        # print("ps",ps)
         ps = [phonemes.index(p) for p in ps]
-        print(ps)
+        # print(ps)
         l = len(ps)
         ps = pad_seq(ps, token_seq_len, 0)
         ds = pad_seq(ds, token_seq_len, 0)
