@@ -50,6 +50,7 @@ def load_textgrid(fn: Path):
 def textgrid_data_loader(data_dir: Path, seq_len: int, batch_size: int, mode: str):
     """load all textgrid files in the directory"""
     tg_files = sorted(data_dir.glob("*.TextGrid"))
+    print(tg_files)
     random.Random(42).shuffle(tg_files)
     L = len(tg_files) * 95 // 100
     assert mode in ["train", "val"]
