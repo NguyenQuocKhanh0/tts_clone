@@ -118,7 +118,7 @@ def train():
                 dic["rng"],
                 dic["optim_state"],
             )
-
+        print(last_step)
     tr = tqdm(
         range(last_step + 1, FLAGS.num_training_steps + 1),
         desc="training",
