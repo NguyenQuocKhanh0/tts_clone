@@ -11,7 +11,7 @@ class FLAGS(Namespace):
     duration_lstm_dim = 256
     vocab_size = 256
     duration_embed_dropout_rate = 0.5
-    num_training_steps = 200_000
+    num_training_steps = 300_000
     postnet_dim = 512
     acoustic_decoder_dim = 512
     acoustic_encoder_dim = 256
@@ -36,8 +36,8 @@ class FLAGS(Namespace):
         + ["ậ", "ắ", "ằ", "ẳ", "ẵ", "ặ", "ẹ", "ẻ", "ẽ", "ế"]
         + ["ề", "ể", "ễ", "ệ", "ỉ", "ị", "ọ", "ỏ", "ố", "ồ"]
         + ["ổ", "ỗ", "ộ", "ớ", "ờ", "ở", "ỡ", "ợ", "ụ", "ủ"]
-        + ["ứ", "ừ", "ử", "ữ", "ự", "ỳ", "ỵ", "ỷ", "ỹ", ]
-        # ch", "gh", "gi", "kh", "ng", "ngh", "nh", "th", "tr", "qu", "ph"
+        + ["ứ", "ừ", "ử", "ữ", "ự", "ỳ", "ỵ", "ỷ", "ỹ"]
+        # + ["ch", "gh", "gi", "kh", "ng", "ngh", "nh", "th", "tr", "qu", "ph"]
     )
 
     # dsp

@@ -37,3 +37,5 @@ mel = text2mel(text, args.lexicon_file, args.silence_duration)
 wave = mel2wave(mel)
 print("writing output to file", args.output)
 sf.write(str(args.output), wave, samplerate=args.sample_rate)
+# /mnt/c/Users/ADMIN/Desktop/VietTTS/vietTTS
+# python3 -m vietTTS.synthesizer --text="hôm qua em tới trường" --lexicon-file=assets/infore/lexicon.txt --output=clip123.wav
